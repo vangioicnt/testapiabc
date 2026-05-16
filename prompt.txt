@@ -1,0 +1,1 @@
+cập nhật tất cả các file ảnh thumb_photo.jpg có trong path này /data/data/com.depthclock.livewallpaper/files/AppData vào project với các folder tương ứng, hãy resize các ảnh này theo chiều rộng 200 chiều cao tự động
