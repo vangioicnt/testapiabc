@@ -1,0 +1,1 @@
+copy toàn bộ nội dung file từ đường dẫn này /data/data/com.depthclock.livewallpaper/files/api.json vào file api.json có trong project
