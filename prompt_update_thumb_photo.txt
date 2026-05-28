@@ -1,4 +1,4 @@
-Cập nhật tất cả file ảnh "thumb_photo.jpg" trong đường dẫn "/data/data/com.depthclock.livewallpaper/files/AppData" vào project theo đúng cấu trúc folder tương ứng.
+Cập nhật tất cả file ảnh "thumb_photo.jpg" trong đường dẫn "/data/data/com.bigclock.livewallpaper/files/AppData" vào project theo đúng cấu trúc folder tương ứng.
 Sau đó resize toàn bộ các ảnh này với:
 * chiều rộng cố định: 200px
 * chiều cao: tự động theo tỉ lệ gốc (auto height, giữ nguyên aspect ratio).
