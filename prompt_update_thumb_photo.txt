@@ -4,7 +4,7 @@ Sau đó resize toàn bộ các ảnh này với:
 * chiều cao: tự động theo tỉ lệ gốc (auto height, giữ nguyên aspect ratio).
 
 
-Chạy đoạn scrip bên dưới cho tôi
+Chạy đoạn script bên dưới cho tôi
 
 ADB=~/Library/Android/sdk/platform-tools/adb
 PACKAGE=com.bigclock.livewallpaper
