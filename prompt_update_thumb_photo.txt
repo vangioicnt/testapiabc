@@ -2,3 +2,35 @@ Cập nhật tất cả file ảnh "thumb_photo.jpg" trong đường dẫn "/dat
 Sau đó resize toàn bộ các ảnh này với:
 * chiều rộng cố định: 200px
 * chiều cao: tự động theo tỉ lệ gốc (auto height, giữ nguyên aspect ratio).
+
+
+Chạy đoạn scrip bên dưới cho tôi
+
+ADB=~/Library/Android/sdk/platform-tools/adb
+PACKAGE=com.bigclock.livewallpaper
+LOCAL_ROOT="/Volumes/Data/Gioi/ManagerData/ApiClock/AppData"
+
+FILES=$($ADB shell "run-as $PACKAGE find files/AppData -name 'thumb_photo.jpg'")
+
+for REMOTE_PATH in $FILES; do
+    # REMOTE_PATH is like files/AppData/Gallery_4/48/thumb_photo.jpg
+    # We want local to be $LOCAL_ROOT/Gallery_4/48/thumb_photo.jpg
+
+    # Strip 'files/AppData/' from the beginning
+    RELATIVE_PATH=${REMOTE_PATH#files/AppData/}
+    LOCAL_PATH="$LOCAL_ROOT/$RELATIVE_PATH"
+    LOCAL_DIR=$(dirname "$LOCAL_PATH")
+
+    echo "Processing $RELATIVE_PATH ..."
+
+    # Create local directory
+    mkdir -p "$LOCAL_DIR"
+
+    # Pull the file
+    $ADB exec-out "run-as $PACKAGE cat $REMOTE_PATH" > "$LOCAL_PATH"
+
+    # Resize the file
+    sips --resampleWidth 200 "$LOCAL_PATH" > /dev/null 2>&1
+done
+
+echo "Done!"
